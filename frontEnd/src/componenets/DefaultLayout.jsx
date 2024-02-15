@@ -24,7 +24,7 @@ export default function DefaultLayout() {
          <button className={`buttonAuth ${view === 0 ? 'active' : ''}`} onClick={()=>{setView(0)}}>Login</button> 
          <button className={`buttonAuth ${view === 1 ? 'active' : ''}`} onClick={()=>{setView(1)}}>inscrire</button>
       </div>
-      <div class="row">
+      <div className="row">
       <div className="col-6">
         <PageDisplay/>
       </div>

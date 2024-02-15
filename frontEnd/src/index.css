@@ -1,3 +1,8 @@
+
+.leaflet-container {
+  width: 100%;
+  height: 60vh;
+}
 * {
   margin: 0;
   padding: 0;
@@ -176,7 +181,7 @@ select.list-dt:focus {
 }
 
 .progressbar div {
-  padding-left:15%
+  padding-left:15%;
   width: 33.3%;
   height: 100%;
   background-color: #f5576c;
@@ -249,4 +254,7 @@ select.list-dt:focus {
 .image{
   height:500px;
   width:100%;
+}
+span{
+  color:red;
 }
