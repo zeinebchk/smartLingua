@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('ville');
             $table->string('adresseExacte');
             $table->integer('numTelPro');
-            $table->point('emplacement');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

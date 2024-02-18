@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PersonalInformation from './PersonalInformation';
 import TypeUser from './TypeUser';
 import SecurityInformation from './SecurityInformation';
+import axiosClient from '../axios.client';
 
 
 export default function Signup() {
@@ -15,13 +16,15 @@ export default function Signup() {
         email:"",
         numTel:"",
         genre:"par",
+        image:"",
         nomProjet:"",
         categorie:"salleFete",
-        gouvernerat:"",
-        ville:"",
-        adresseExact:"",
-        emplacement:"",
-        password:"" ,
+        gouvernerat:"Monastir",
+        ville:"Monastir",
+        adresseExacte:"",
+        latitude:0,
+        longitude:0,
+        password:"",
         confirmPassword:"",
         numTelPro:""
     });
@@ -106,6 +109,17 @@ export default function Signup() {
         if(Object.keys(validationErrors).length===0){
            alert("submitted");
            console.log(formData);
+           axiosClient.post('register',formData)
+           .then(({data})=>{
+               setToken(data.token)
+               setUser(data.user)
+           }).catch(err=>{
+               const response=err.response;
+               if(response && response.status ===422){
+                   setErrors(response.data.errors); 
+   
+               }
+           })
         }
       
     }

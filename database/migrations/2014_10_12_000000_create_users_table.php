@@ -18,24 +18,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('numTel');
             $table->string('genre');
+            $table->string('image');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::create('entrepreneurs', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomProjet');
-            $table->string('categorie');
-            $table->string('gouvernerat');
-            $table->string('ville');
-            $table->string('adresseExacte');
-            $table->integer('numTelPro');
-            $table->point('emplacement');
-            $table->timestamps();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
+      
     }
 
     /**

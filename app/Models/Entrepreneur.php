@@ -16,6 +16,7 @@ class Entrepreneur extends User
        'ville',
        'adresseExacte',
        'numTelPro',
-       'emplacement'
+       'latitude',
+       'longitude',
     ];
 }
